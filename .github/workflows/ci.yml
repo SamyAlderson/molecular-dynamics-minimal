@@ -1,4 +1,4 @@
-name: CI/CD
+name: CI
 
 on:
   push:
@@ -6,11 +6,9 @@ on:
   pull_request:
     branches: [main]
 
-permissions:
-  contents: write
-
 jobs:
-  test:
+  build:
+    name: Build & Setup
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -18,19 +16,20 @@ jobs:
         with:
           version: '1.10'
       - uses: julia-actions/cache@v2
-      - run: julia --project=. -e 'using Pkg; Pkg.instantiate()'
-      - run: julia --project=. -e 'using Pkg; Pkg.test()'
+      - name: Install dependencies
+        run: julia --project=. -e 'using Pkg; Pkg.instantiate()'
 
-  release:
-    needs: test
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+  test:
+    name: Test Suite
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
+    needs: build
     steps:
       - uses: actions/checkout@v4
-      - name: Tag release
-        run: |
-          VERSION=$(date +%Y.%m.%d)-$(git rev-parse --short HEAD)
-          git tag -a "v$VERSION" -m "Release $VERSION"
-          git push origin "v$VERSION"
+      - uses: julia-actions/setup-julia@v2
+        with:
+          version: '1.10'
+      - uses: julia-actions/cache@v2
+      - name: Install dependencies
+        run: julia --project=. -e 'using Pkg; Pkg.instantiate()'
+      - name: Run tests
+        run: julia --project=. -e 'using Pkg; Pkg.test()'
