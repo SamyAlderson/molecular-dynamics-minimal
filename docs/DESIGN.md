@@ -1,20 +1,22 @@
 # Design Document: molecular-dynamics-minimal
 
 ## Overview
-A minimal molecular dynamics simulation in Julia for educational purposes.
+# molecular-dynamics-minimal
+=====================================
+
+## Description
+------------
+
+A minimal implementation of molecular dynamics simulation in Julia. This project provides a basic frame
 
 ## Architecture
-- `src/main.jl` - Entry point and simulation loop
-- `src/molecules.jl` - Molecular structure definitions
-- `src/forces.jl` - Force field calculations (Lennard-Jones)
-- `src/integrator.jl` - Velocity Verlet integration
-- `src/utils.jl` - Utility functions
+The project follows a modular architecture for maintainability and extensibility.
 
-## Choix techniques
-- Langage: Julia (performance + simplicité)
-- Intégrateur: Velocity Verlet (stabilité symplectique)
+## Technical Choices
+- Language: julia
+- Approach: Direct implementation with focus on correctness and performance
 
-## Améliorations futures
-- Potentiels multiples (Coulomb, etc.)
-- Parallélisation GPU
-- Visualisation 3D
+## Future Improvements
+- Performance optimization
+- Additional test coverage
+- Enhanced documentation
