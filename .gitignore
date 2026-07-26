@@ -1,12 +1,14 @@
-__pycache__/
-*.pyc
-.pytest_cache/
-.env
-*.egg-info/
-dist/
-build/
-.venv/
+# ignore the following files
+.gitignore
+.DS_Store
 node_modules/
-target/
-bin/
-obj/
+coverage/
+
+# ignore the following directories
+.vscode/
+.idea/
+
+# ignore the following patterns
+*.pyc
+*.log
+*.tmp
