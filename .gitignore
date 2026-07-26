@@ -1,14 +1,24 @@
-# ignore the following files
-.gitignore
-.DS_Store
+# Ignore node_modules and __pycache__ directories
 node_modules/
-coverage/
+__pycache__/
 
-# ignore the following directories
-.vscode/
+# Ignore IDE files
 .idea/
+.vscode/
 
-# ignore the following patterns
+# Ignore Python cache
+.cache/
+
+# Ignore logs
+logs/
+
+# Ignore database files
+db.sqlite3
+db.json
+
+# Ignore coverage files
+coverage.xml
+coverage.html
+
+# Ignore pyc files
 *.pyc
-*.log
-*.tmp
