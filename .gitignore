@@ -1,24 +1,31 @@
-# Ignore node_modules and __pycache__ directories
-node_modules/
-__pycache__/
+# ignore .env file
+.env
 
-# Ignore IDE files
+# ignore node_modules and yarn.lock
+node_modules/
+yarn.lock
+
+# ignore build and dist folders
+build/
+dist/
+
+# ignore IDE files
 .idea/
 .vscode/
 
-# Ignore Python cache
-.cache/
+# ignore docker files
+docker-compose.yml
+Dockerfile
 
-# Ignore logs
-logs/
-
-# Ignore database files
-db.sqlite3
-db.json
-
-# Ignore coverage files
+# ignore coverage files
 coverage.xml
 coverage.html
 
-# Ignore pyc files
+# ignore pyc files
 *.pyc
+
+# ignore logs
+logs/
+
+# ignore test cache
+__pycache__/
