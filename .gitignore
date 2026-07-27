@@ -1,31 +1,32 @@
-# ignore .env file
-.env
+# Ignore gitignore file itself
+.gitignore
 
-# ignore node_modules and yarn.lock
+# Ignore node_modules and yarn.lock
 node_modules/
 yarn.lock
 
-# ignore build and dist folders
-build/
-dist/
-
-# ignore IDE files
+# Ignore IDE files
 .idea/
 .vscode/
 
-# ignore docker files
-docker-compose.yml
-Dockerfile
+# Ignore build artifacts
+build/
 
-# ignore coverage files
+# Ignore docker images
+docker/
+
+# Ignore pyc files
+*.pyc
+
+# Ignore coverage reports
 coverage.xml
 coverage.html
 
-# ignore pyc files
-*.pyc
+# Ignore local data
+data/
 
-# ignore logs
+# Ignore logs
 logs/
 
-# ignore test cache
+# Ignore pycache
 __pycache__/
